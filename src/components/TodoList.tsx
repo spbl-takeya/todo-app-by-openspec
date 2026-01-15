@@ -6,7 +6,7 @@ import { TodoItem } from "./TodoItem";
 interface TodoListProps {
   todos: Todo[];
   onToggle: (id: string) => void;
-  onUpdate: (id: string, title: string, description?: string) => void;
+  onUpdate: (id: string, title: string, description?: string, dueDate?: Date | null) => void;
   onDelete: (id: string) => void;
 }
 

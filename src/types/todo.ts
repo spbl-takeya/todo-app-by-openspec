@@ -4,6 +4,7 @@ export interface Todo {
   description?: string;
   completed: boolean;
   createdAt: Date;
+  dueDate?: Date;
 }
 
 export type FilterType = "all" | "active" | "completed";
