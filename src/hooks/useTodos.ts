@@ -19,7 +19,6 @@ export function useTodos() {
         parsed.map((todo: Todo) => ({
           ...todo,
           createdAt: new Date(todo.createdAt),
-          dueDate: todo.dueDate ? new Date(todo.dueDate) : undefined,
         }))
       );
     }
@@ -34,7 +33,7 @@ export function useTodos() {
   }, [todos, isLoaded]);
 
   // Todo作成
-  const addTodo = useCallback((title: string, description?: string, dueDate?: Date) => {
+  const addTodo = useCallback((title: string, description?: string) => {
     if (!title.trim()) {
       throw new Error("タイトルは必須です");
     }
@@ -44,7 +43,6 @@ export function useTodos() {
       description: description?.trim() || undefined,
       completed: false,
       createdAt: new Date(),
-      dueDate,
     };
     setTodos((prev) => [newTodo, ...prev]);
   }, []);
@@ -60,7 +58,7 @@ export function useTodos() {
 
   // Todo編集
   const updateTodo = useCallback(
-    (id: string, title: string, description?: string, dueDate?: Date | null) => {
+    (id: string, title: string, description?: string) => {
       if (!title.trim()) {
         throw new Error("タイトルは必須です");
       }
@@ -71,7 +69,6 @@ export function useTodos() {
                 ...todo,
                 title: title.trim(),
                 description: description?.trim() || undefined,
-                dueDate: dueDate === null ? undefined : dueDate ?? todo.dueDate,
               }
             : todo
         )
