@@ -19,10 +19,6 @@ TBD - created by archiving change add-core-todo-features. Update Purpose after a
 - **WHEN** ユーザーがタイトルなしでTodoを作成しようとする
 - **THEN** 作成は失敗しバリデーションエラーが表示される
 
-#### Scenario: 期限付きでTodoを作成
-- **WHEN** ユーザーがタイトルと期限を入力する
-- **THEN** 期限が設定された新しいTodo項目が作成される
-
 ### Requirement: Todo一覧表示
 システムはすべてのTodo項目をリスト形式で表示しなければならない（SHALL）。
 
@@ -62,14 +58,6 @@ TBD - created by archiving change add-core-todo-features. Update Purpose after a
 - **WHEN** ユーザーが空のタイトルでTodoを保存しようとする
 - **THEN** 編集は失敗しバリデーションエラーが表示される
 
-#### Scenario: 期限を編集
-- **WHEN** ユーザーが既存Todoの期限を変更する
-- **THEN** Todoが新しい期限で更新される
-
-#### Scenario: 期限を削除
-- **WHEN** ユーザーが既存Todoの期限をクリアする
-- **THEN** Todoから期限が削除される
-
 ### Requirement: Todo削除
 システムはユーザーがTodo項目を削除できるようにしなければならない（SHALL）。
 
@@ -92,20 +80,4 @@ TBD - created by archiving change add-core-todo-features. Update Purpose after a
 #### Scenario: 完了済みTodoのみ表示
 - **WHEN** ユーザーが「完了済み」フィルターを選択する
 - **THEN** 完了済みのTodoのみが表示される
-
-### Requirement: 期限表示
-システムは期限が設定されたTodoの期限を表示しなければならない（SHALL）。
-
-#### Scenario: 期限を表示
-- **WHEN** Todoに期限が設定されている
-- **THEN** 期限日が表示される
-
-#### Scenario: 期限切れを強調表示
-- **WHEN** Todoの期限が過ぎている
-- **AND** Todoが未完了である
-- **THEN** 期限切れであることが視覚的に強調される
-
-#### Scenario: 期限なしの場合
-- **WHEN** Todoに期限が設定されていない
-- **THEN** 期限は表示されない
 
